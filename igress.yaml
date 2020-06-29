@@ -1,0 +1,10 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: wordpress-ingress
+spec:
+  tls:
+  - secretName: mysql-pass
+  backend:
+    serviceName: nodeport-service
+    servicePort: 80
